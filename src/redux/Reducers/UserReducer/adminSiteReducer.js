@@ -1,4 +1,4 @@
-import {  deleteUserInFireStore, updateUserInFirestore } from "../../../Firebase/globalData";
+import {  deleteUserInFireStore, updateUserInFirestore } from "../../../Firebase/FireBaseServices";
 import { toast } from "react-toastify";
 
 const userReducers = {

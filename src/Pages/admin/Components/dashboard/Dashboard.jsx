@@ -1,9 +1,10 @@
 import { Box, Card, CardContent, Typography } from '@mui/material'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { ordersCompleted, ordersPending } from '../../../redux/Selectors/OrderSelector/adminSiteSelector'
-import { productsCount } from '../../../redux/Selectors/ProductSelector/productSelectors'
-import { usersCount } from '../../../redux/Selectors/UserSelector/AdminSiteSelector'
+import { productsCount } from '../../../../redux/Selectors/ProductSelector/productSelectors'
+import { ordersCompleted, ordersPending } from '../../../../redux/Selectors/OrderSelector/adminSiteSelector'
+import { usersCount } from '../../../../redux/Selectors/UserSelector/AdminSiteSelector'
+
 
 const Dashboard = () => {
     const numberofProducts = useSelector(productsCount)

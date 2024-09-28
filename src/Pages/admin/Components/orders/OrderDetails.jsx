@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import ProductCard from '../../common/ProductCard';
 import { Stack, Typography, Box, Card, CardContent, Divider, Grid, Button } from '@mui/material';
-import { toggleOrderStatus } from '../../../redux/slices/adminSlice';
-import { selectProductsByIds } from '../../../redux/Selectors/ProductSelector/productSelectors';
-import {  getUserById } from '../../../redux/Selectors/UserSelector/AdminSiteSelector';
+import { getUserById } from '../../../../redux/Selectors/UserSelector/AdminSiteSelector';
+import { selectProductsByIds } from '../../../../redux/Selectors/ProductSelector/productSelectors';
+import ProductCard from '../../../../Components/common/ProductCard';
+import { toggleOrderStatus } from '../../../../redux/slices/adminSlice';
 
 const OrderDetails = () => {
     const location = useLocation();

@@ -131,21 +131,21 @@ function AppBarComponent(props) {
                 <Typography variant="h6" component={Link} to="/cart" sx={{ textDecoration: 'none', color: 'white', flexGrow: 1 }}>
                   Cart
                 </Typography>
-                <Button onClick={() => {
-                  setCurrentUser(false)
-                  localStorage.removeItem('email')
-                  toast.success('Logout Success');
-                  navigate('/login');
-                }} color="inherit">
+                <Button color="inherit">
                   <Stack spacing={2} direction={'row'} alignItems={'center'}>
-                    <Typography variant='h6'>Welcome <strong>{userLoader ?
+                    <Typography variant='h6' onClick={() => navigate('userDetails')}>Welcome <strong>{userLoader ?
                       <l-dot-wave
                         size="47"
                         speed="1"
                         color="white"
                       ></l-dot-wave> :
                       name}</strong></Typography>
-                    <LogoutIcon />
+                    <LogoutIcon onClick={() => {
+                      setCurrentUser(false)
+                      localStorage.removeItem('email')
+                      toast.success('Logout Success');
+                      navigate('/login');
+                    }} />
                   </Stack>
                 </Button>
               </>

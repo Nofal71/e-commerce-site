@@ -1,13 +1,13 @@
 import { TextField, Button, Box, Input, Container } from '@mui/material';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../../../redux/slices/productSlice';
 import { toast } from 'react-toastify';
 import UploadIcon from '@mui/icons-material/Upload';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import { imageDb } from '../../../Firebase/cofig/firebase';
 import { v4 } from 'uuid';
 import { dotSpinner } from 'ldrs'
+import { imageDb } from '../../../../Firebase/cofig/firebase';
+import { addProduct } from '../../../../redux/slices/productSlice';
 dotSpinner.register()
 
 const AddProduct = ({ handleClose }) => {

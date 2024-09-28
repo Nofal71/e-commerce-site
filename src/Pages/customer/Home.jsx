@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import ProductsList from '../../Components/customer-page/products/ProductsList'
 import Header from '../../Components/common/Header'
 import Footer from '../../Components/common/Footer'
-import { Headerprovider } from '../../Components/admin-page/setting/HeaderProvider'
+import { Headerprovider } from '../admin/Components/setting/HeaderProvider'
+import ProductsList from './Components/products/ProductsList'
 
-const Home = () => {
+const CustomerHome = () => {
 
   const { header } = useContext(Headerprovider)
 
@@ -17,4 +17,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default CustomerHome

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Box, Button, CircularProgress, Container, Stack, Typography } from '@mui/material';
-import AppBarComponent from '../../common/AppBar';
-import ModalComponent from '../../common/ModalComponent';
-import UserDetails from './UserDetails';
 import { toast } from 'react-toastify';
-import { updateCurrentCart, updateOrders } from '../../../redux/slices/currentUserSlice';
-import { selectProductById } from '../../../redux/Selectors/ProductSelector/productSelectors';
-import { currentUser } from '../../../redux/Selectors/UserSelector/CustomerSiteReducer';
+import { selectProductById } from '../../../../redux/Selectors/ProductSelector/productSelectors';
+import { currentUser } from '../../../../redux/Selectors/UserSelector/CustomerSiteReducer';
+import { updateCurrentCart, updateOrders } from '../../../../redux/slices/currentUserSlice';
+import AppBarComponent from '../../../../Components/common/AppBar';
+import ModalComponent from '../../../../Components/common/ModalComponent';
+import UserDetails from '../userDetails/UserDetails';
+
 
 const ViewProduct = () => {
     const location = useLocation();

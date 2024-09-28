@@ -1,16 +1,16 @@
 import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import ProductCard from '../../common/ProductCard';
-import ModalComponent from '../../common/ModalComponent';
-import AddProduct from './AddProduct';
 import DeleteIcon from '@mui/icons-material/Delete';
-import EditProduct from './EditProduct';
 import EditIcon from '@mui/icons-material/Edit';
-import { removeProduct } from '../../../redux/slices/productSlice';
-import { LoaderProvider } from '../../../Firebase/fetchData';
-import { selectAllProducts } from '../../../redux/Selectors/ProductSelector/productSelectors';
 import WarningIcon from '@mui/icons-material/Warning';
+import { selectAllProducts } from '../../../../redux/Selectors/ProductSelector/productSelectors';
+import { LoaderProvider } from '../../../../Firebase/fetchData';
+import { removeProduct } from '../../../../redux/slices/productSlice';
+import AddProduct from './AddProduct';
+import ModalComponent from '../../../../Components/common/ModalComponent';
+import EditProduct from './EditProduct';
+import ProductCard from '../../../../Components/common/ProductCard';
 
 const ManageProducts = () => {
     const products = useSelector(selectAllProducts);

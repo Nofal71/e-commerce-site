@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { updateUserInFirestore } from "../../../Firebase/globalData";
+import { updateUserInFirestore } from "../../../Firebase/FireBaseServices";
 
 const orderReducers = {
     updateOrders: (state, action) => {

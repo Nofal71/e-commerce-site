@@ -54,6 +54,7 @@ export const getUserData = async (email) => {
         const user = userDoc.data();
         return user
     }
+    return null
 }
 export const CheckUser = async (email) => {
     const usersCollection = collection(db, 'users');

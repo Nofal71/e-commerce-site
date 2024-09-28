@@ -2,7 +2,7 @@ import { Container, InputLabel, Stack, Input, Typography, Button } from '@mui/ma
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { CheckUser } from '../../Firebase/globalData';
+import { CheckUser } from '../../Firebase/FireBaseServices';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../../redux/slices/currentUserSlice';
 import { createUserWithEmailAndPassword } from 'firebase/auth';

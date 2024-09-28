@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { updateProduct } from '../../../redux/slices/productSlice';
 import { Box, Button, Container, Input, InputLabel, TextField } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
-import { imageDb } from '../../../Firebase/cofig/firebase';
 import { toast } from 'react-toastify';
 import { dotSpinner } from 'ldrs'
+import { imageDb } from '../../../../Firebase/cofig/firebase';
+import { updateProduct } from '../../../../redux/slices/productSlice';
 dotSpinner.register()
 
 

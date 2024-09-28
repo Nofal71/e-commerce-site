@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { Headerprovider } from './HeaderProvider'
 import { Button, InputLabel, Stack, TextField, Typography } from '@mui/material'
 import { toast } from 'react-toastify'
-import { saveHeaderinFireBase } from '../../../Firebase/siteSettings'
+import { saveHeaderinFireBase } from '../../../../Firebase/siteSettings'
+import { Headerprovider } from './HeaderProvider'
 
 const Setting = () => {
     const { setHeader } = useContext(Headerprovider)

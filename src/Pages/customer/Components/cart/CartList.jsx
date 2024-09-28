@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Box, Button, Typography } from '@mui/material';
-import ProductCard from '../../common/ProductCard';
-import AppBarComponent from '../../common/AppBar';
-import { LoaderProvider } from '../../../Firebase/fetchData';
 import { waveform } from 'ldrs';
-import Footer from '../../common/Footer';
-import { removeFromCurrentCart } from '../../../redux/slices/currentUserSlice';
-import { selectProductsByIds } from '../../../redux/Selectors/ProductSelector/productSelectors';
-import { currentUser } from '../../../redux/Selectors/UserSelector/CustomerSiteReducer';
+import { currentUser } from '../../../../redux/Selectors/UserSelector/CustomerSiteReducer';
+import { selectProductsByIds } from '../../../../redux/Selectors/ProductSelector/productSelectors';
+import { removeFromCurrentCart } from '../../../../redux/slices/currentUserSlice';
+import ProductCard from '../../../../Components/common/ProductCard';
+import { LoaderProvider } from '../../../../Firebase/fetchData';
+import Footer from '../../../../Components/common/Footer';
+import AppBarComponent from '../../../../Components/common/AppBar';
 waveform.register();
 
 const CartList = () => {

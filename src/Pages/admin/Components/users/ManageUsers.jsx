@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { List, ListItem, ListItemText, Typography, Switch, Divider, Box, Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteUser, editAdmin } from '../../../redux/slices/adminSlice';
-import { currentUserProvider } from '../../../Context/CurrentUser';
-import { getAllUsers } from '../../../redux/Selectors/UserSelector/AdminSiteSelector';
+import { deleteUser, editAdmin } from '../../../../redux/slices/adminSlice';
+import { currentUserProvider } from '../../../../Context/CurrentUser';
+import { getAllUsers } from '../../../../redux/Selectors/UserSelector/AdminSiteSelector';
+
 
 const ManageUsers = () => {
 

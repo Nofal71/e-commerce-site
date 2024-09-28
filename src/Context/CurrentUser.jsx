@@ -4,15 +4,15 @@ export const currentUserProvider = createContext()
 
 const CurrentUser = ({ children }) => {
 
-    const [currentUserEmail, setCurrentUser] = useState(false)
+    const email = localStorage.getItem('email')
+    const [currentUserEmail, setCurrentUser] = useState(JSON.parse(email) || false)
     const [isAdmin, setAdmin] = useState(false)
 
     useEffect(() => {
-        const email = localStorage.getItem('email')
-        if (email) {
-            setCurrentUser(JSON.parse(email))
+        if (currentUserEmail) {
+            localStorage.setItem('email', JSON.stringify(currentUserEmail))
         }
-    }, [isAdmin])
+    }, [isAdmin, currentUserEmail])
 
     return (
         <currentUserProvider.Provider value={{ currentUserEmail, setCurrentUser, isAdmin, setAdmin }}>

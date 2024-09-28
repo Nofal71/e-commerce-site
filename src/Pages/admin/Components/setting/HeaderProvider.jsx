@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { getHeaderFromFireBase } from '../../../Firebase/siteSettings'
+import { getHeaderFromFireBase } from '../../../../Firebase/siteSettings'
 
 
 export const Headerprovider = createContext()
