@@ -10,7 +10,7 @@ const HeaderProvider = ({ children }) => {
     useEffect(() => {
         const header = getHeaderFromFireBase()
         header.then((data) => {
-            setHeader(data.data().header)
+            setHeader(data?.data().header)
         })
     }, [])
 

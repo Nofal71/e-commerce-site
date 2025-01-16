@@ -9,7 +9,6 @@ export const addUserToFirestore = async (user) => {
         const doc = await getDoc(userDoc);
         if (!doc.exists()) {
             await setDoc(userDoc, user);
-            console.log('User added successfully.');
         } else {
             console.log('User already exists.');
         }

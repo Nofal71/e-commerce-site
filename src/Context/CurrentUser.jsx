@@ -5,8 +5,14 @@ export const currentUserProvider = createContext()
 const CurrentUser = ({ children }) => {
 
     const email = localStorage.getItem('email')
-    const [currentUserEmail, setCurrentUser] = useState(JSON.parse(email) || false)
+    const [currentUserEmail, setCurrentUser] = useState(email && JSON.parse(email))
     const [isAdmin, setAdmin] = useState(false)
+
+    const logout = () => {
+        setCurrentUser(null)
+        setAdmin(null)
+        localStorage.clear()
+    }
 
     useEffect(() => {
         if (currentUserEmail) {
@@ -15,7 +21,7 @@ const CurrentUser = ({ children }) => {
     }, [isAdmin, currentUserEmail])
 
     return (
-        <currentUserProvider.Provider value={{ currentUserEmail, setCurrentUser, isAdmin, setAdmin }}>
+        <currentUserProvider.Provider value={{ currentUserEmail, setCurrentUser, isAdmin, setAdmin, logout }}>
             {children}
         </currentUserProvider.Provider>
     )

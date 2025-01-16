@@ -36,7 +36,6 @@ const UserDetails = () => {
                 setLoader(true)
                 const data = await getUserData(currentUserEmail)
                 setUserData(data)
-                console.log(data)
                 data ? toast.success('Data Load Success') : toast.warn('User Not Found')
             } catch (error) {
                 toast.warn(`Error in Fetching Data: ${error.message}`)

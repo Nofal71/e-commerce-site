@@ -18,7 +18,6 @@ const Dashboard = () => {
         { msg: 'No of Completed Orders', value: numberOfCompletedOrders },
         { msg: 'No of Pending Orders', value: numberOfPendingOrders },
     ]
-
     return (
         <>
             <Typography variant='h4' align='center'> Dashboard</Typography>

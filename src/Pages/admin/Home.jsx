@@ -4,7 +4,8 @@ import ManageProducts from './Components/products/ManageProducts'
 import ManageUsers from './Components/users/ManageUsers'
 import Orders from './Components/orders/Orders'
 import Setting from './Components/setting/Setting'
-import SideBar from '../../Components/common/SideBar'
+import { SideBar } from '../../Components/common'
+
 
 
 

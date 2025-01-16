@@ -16,12 +16,12 @@ const ProductsList = () => {
     const [search, setSearch] = useState('')
     const navigate = useNavigate();
 
-    
+
     useEffect(() => {
         setProducts(data);
     }, [data]);
 
-    
+
     const searchData = () => {
         return data.filter((product) => product.title.includes(search) || product.description.includes(search))
     }
@@ -64,7 +64,7 @@ const ProductsList = () => {
                         my: '30px'
                     }}
                 >
-                    <TextField sx={{ width: { xs: '100%', sm: '80%', md: '50%', lg: '45%' } }} placeholder='Search Items .....' onChange={(e) => {
+                    <TextField size='small' sx={{ width: { xs: '100%', sm: '80%', md: '50%', lg: '45%' } }} placeholder='Search Items .....' onChange={(e) => {
                         setSearch(e.target.value)
                         setProducts(searchData)
                         if (e.target.value === '') setProducts(data)
@@ -75,9 +75,10 @@ const ProductsList = () => {
                             labelId="demo-select-small-label"
                             id="demo-select-small"
                             value={filter}
+                            size='small'
                             label="Filter"
                             onChange={handleChange}
-                            sx={{ width: '150px', height: { xs: '40px', sm: '50px', md: '55px', lg: '60px' } }}
+                            sx={{ width: '150px', }}
                         >
                             <MenuItem value={filter}>
                                 New First
@@ -100,7 +101,12 @@ const ProductsList = () => {
                 </Box>
             </>
             ) : (
-                <Box display="flex" justifyContent="center" alignItems="center" height={'10dvh'}>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    my: 5,
+                }}>
                     <Typography>No Product Found</Typography>
                 </Box>
             )

@@ -53,6 +53,7 @@ export const useFetch = () => {
     const { currentUserEmail, setAdmin } = useContext(currentUserProvider)
     const user = useSelector(currentUser)   // In Case of New User , Current state already updated
 
+
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -61,6 +62,7 @@ export const useFetch = () => {
                     dispatch(loadProducts(products));
                 }
             } catch (error) {
+
                 console.error('Error fetching data:', error);
             }
         };
@@ -74,21 +76,23 @@ export const useFetch = () => {
                 console.error('Error fetching data:', error);
             }
         };
-        fetchProducts();
 
-        if (currentUserEmail) {
-            const getUser = getUserData(currentUserEmail);
-            console.log(user?.admin, 'isAdmin')
-            getUser.then((data) => {
-                dispatch(loadCurrentUser(data))
+        const fetchCurrentUser = async () => {
+            if (currentUserEmail) {
+                const getUser = await getUserData(currentUserEmail);
+                getUser && dispatch(loadCurrentUser(getUser))
                 if (user?.admin) {
                     fetchUsers()
                     setAdmin(true)
                 } else {
                     setAdmin(false)
                 }
-            })
+            }
         }
+
+        fetchProducts()
+        fetchCurrentUser()
+
 
     }, [dispatch, currentUserEmail, setAdmin, user?.admin]);
 

@@ -8,9 +8,8 @@ import { selectAllProducts } from '../../../../redux/Selectors/ProductSelector/p
 import { LoaderProvider } from '../../../../Firebase/fetchData';
 import { removeProduct } from '../../../../redux/slices/productSlice';
 import AddProduct from './AddProduct';
-import ModalComponent from '../../../../Components/common/ModalComponent';
 import EditProduct from './EditProduct';
-import ProductCard from '../../../../Components/common/ProductCard';
+import { ModalComponent, ProductCard } from '../../../../Components/common';
 
 const ManageProducts = () => {
     const products = useSelector(selectAllProducts);

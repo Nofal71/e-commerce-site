@@ -6,7 +6,6 @@ import { updateCurrentUserDetails } from '../../../redux/slices/currentUserSlice
 
 const UserDetails = ({ handleClose }) => {
     const dispatch = useDispatch()
-    // const [location, setLocation] = useState('')
     const [data, setData] = useState({
         name: '',
         phone: '',
@@ -27,16 +26,6 @@ const UserDetails = ({ handleClose }) => {
         toast.warn('Please Add Details')
     }, [])
 
-    // const getUserLocation = () => {
-    //     if (navigator.geolocation) {
-    //         navigator.geolocation.getCurrentPosition(postion => {
-    //             setLocation({ lat: postion.coords.latitude, long: postion.coords.longitude })
-    //         })
-    //     }
-    //     console.log(location)
-    // }
-
-
     return (
         <>
             <Container style={{ marginTop: '5vh' }} className='anim'>
@@ -47,7 +36,6 @@ const UserDetails = ({ handleClose }) => {
                             <TextField name='name' placeholder='Enter Your Full Name' label='Name' value={data.name} onChange={handleChange} fullWidth />
                             <TextField name='phone' placeholder='Enter Your Phone Number' label='Phone' value={data.phone} onChange={handleChange} fullWidth />
                             <TextField name='address' placeholder='Enter Your Address' label='Address' value={data.address} onChange={handleChange} fullWidth />
-                            {/* <TextField name='address' placeholder='Enter Your Address' label='Address' value={`${location.lat} , ${location.long}`} onChange={getUserLocation} fullWidth /> */}
                             <Button onClick={handleSave} fullWidth>Save Details</Button>
                         </Stack>
                     </CardContent>

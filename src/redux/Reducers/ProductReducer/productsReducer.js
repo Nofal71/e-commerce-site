@@ -1,6 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { deleteImageFromStorage, deleteProductFromFirebase, updateFireBase } from "../../../Firebase/Products";
 import { toast } from "react-toastify";
+import { deleteImageFromStorage, deleteProductFromFirebase, updateFireBase } from "../../../Firebase";
 
 const productsReducer = {
 

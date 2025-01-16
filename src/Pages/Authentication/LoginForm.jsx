@@ -45,9 +45,23 @@ const LoginForm = () => {
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <Container sx={{ marginTop: '20vh', maxWidth: 'sm' }}>
-                    <Typography variant='h4' align='center' gutterBottom>Login</Typography>
-                    <Card>
+                <Container sx={{
+                    display: 'grid',
+                    placeItems: 'center',
+                    height: '100dvh',
+                    width: "100%",
+                }}
+                >
+                    <Card
+                        elevation={5}
+                        sx={{
+                            width: { xs: '100%', md: '50%' },
+                            mx: 'auto',
+                            py: 3,
+                            borderRadius: '25px'
+
+                        }}>
+                        <Typography variant='h4' align='center' gutterBottom>Login</Typography>
                         <CardContent>
                             <Stack spacing={3} direction='column'>
                                 <Stack direction={'column'} spacing={1}>

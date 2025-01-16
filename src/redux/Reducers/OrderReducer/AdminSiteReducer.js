@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { updateUserInFirestore } from "../../../Firebase/FireBaseServices";
+import { updateUserInFirestore } from "../../../Firebase";
 
 const orderReducers = {
     updateOrders: (state, action) => {
@@ -34,7 +34,6 @@ const orderReducers = {
         } else if (user && orderState === 'proceed') {
             user.orders.state = 'pending'
         }
-        console.log('This is user', { ...user.orders })
         toast.warn('Order State Updated ');
         updateUserInFirestore(userId, user)
     }

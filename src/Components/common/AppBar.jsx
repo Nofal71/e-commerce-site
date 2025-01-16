@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useContext, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -30,13 +30,12 @@ const drawerWidth = 240;
 
 function AppBarComponent(props) {
   const navigate = useNavigate();
-  const { setCurrentUser, currentUserEmail, isAdmin } = React.useContext(currentUserProvider)
+  const { currentUserEmail, isAdmin, logout } = useContext(currentUserProvider)
   const user = useSelector((state) => currentUserEmail && currentUser(state))
   const name = user?.userDetails?.name
-  const admin = isAdmin;
-  const { userLoader } = React.useContext(LoaderProvider)
+  const { userLoader } = useContext(LoaderProvider)
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -49,7 +48,7 @@ function AppBarComponent(props) {
       </Typography>
       <Divider />
       <List>
-        {admin && (
+        {isAdmin && (
           <ListItem disablePadding>
             <ListItemButton component={Link} to="/admin" sx={{ textAlign: 'center' }}>
               <ListItemText primary="Admin" />
@@ -85,7 +84,7 @@ function AppBarComponent(props) {
         ) : (
           <ListItem disablePadding>
             <ListItemButton onClick={() => {
-              setCurrentUser(false)
+              logout()
               navigate('/login');
             }} sx={{ textAlign: 'center' }}>
               <ListItemText primary="Login" />
@@ -121,7 +120,7 @@ function AppBarComponent(props) {
             POS System
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, flexGrow: 1, alignItems: 'center' }}>
-            {admin && (
+            {isAdmin && (
               <Typography variant="h6" component={Link} to="/admin" sx={{ marginRight: '15px', textDecoration: 'none', color: 'white' }}>
                 Admin
               </Typography>
@@ -133,7 +132,7 @@ function AppBarComponent(props) {
                 </Typography>
                 <Button color="inherit">
                   <Stack spacing={2} direction={'row'} alignItems={'center'}>
-                    <Typography variant='h6' onClick={() => navigate('userDetails')}>Welcome <strong>{userLoader ?
+                    <Typography variant='h6' onClick={() => navigate('/userDetails')}>Welcome <strong>{userLoader ?
                       <l-dot-wave
                         size="47"
                         speed="1"
@@ -141,8 +140,7 @@ function AppBarComponent(props) {
                       ></l-dot-wave> :
                       name}</strong></Typography>
                     <LogoutIcon onClick={() => {
-                      setCurrentUser(false)
-                      localStorage.removeItem('email')
+                      logout()
                       toast.success('Logout Success');
                       navigate('/login');
                     }} />

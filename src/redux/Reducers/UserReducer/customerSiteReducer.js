@@ -1,6 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit";
-import { addUserToFirestore, updateUserInFirestore } from "../../../Firebase/FireBaseServices";
 import { toast } from "react-toastify";
+import { addUserToFirestore, updateUserInFirestore } from "../../../Firebase";
 
 const UserReducer = {
     updateCurrentUserDetails: (state, action) => {
